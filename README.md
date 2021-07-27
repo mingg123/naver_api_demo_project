@@ -1,5 +1,6 @@
 # naver_api_demo_project
-검색 api를 이용한 간단한 프로젝트
+
+네이버 api를 이용한 간단한 검색 프로젝트
 
 # Env
 
