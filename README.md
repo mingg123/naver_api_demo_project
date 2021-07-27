@@ -21,9 +21,7 @@ swagger 사용
 
 # swagger 예시 
 
-```
 ![image](https://user-images.githubusercontent.com/52990629/127150315-b77855be-7326-4970-89fb-6659fa5837d8.png)
 
-```
 
 
