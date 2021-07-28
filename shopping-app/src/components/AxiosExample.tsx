@@ -8,7 +8,7 @@ const AxiosExample = () => {
   const onClick = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8083/api/shopping/search?query=` + value
+        `http://localhost:8084/api/recomend/shopping/search?query=` + value
       );
       setData(response.data);
     } catch (e) {
