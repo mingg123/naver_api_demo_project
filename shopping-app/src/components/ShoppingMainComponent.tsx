@@ -1,24 +1,26 @@
 import { TextField } from "@material-ui/core";
-import axios from "axios";
-import React, { useState } from "react";
-import { FC } from "react";
-import "./ShoppingMainComponent.scss";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import React from "react";
 import StorefrontIcon from "@material-ui/icons/Storefront";
-import { useDispatch } from "react-redux";
-import { actionSearch } from "../store/actions";
-interface IShoppingMainComponent {
-  setData: React.Dispatch<React.SetStateAction<null>>;
-}
-const ShoppingMainComponent: FC<IShoppingMainComponent> = ({ setData }) => {
-  const [value, setValue] = useState("");
+import axios from "axios";
+import "./ShoppingMainComponent.scss";
+
+type ShoppingSearchProps = {
+  value: string;
+  onChange: (diff: string) => void;
+  getData: (data: any) => void;
+};
+
+function ShoppingMainComponent({
+  value,
+  onChange,
+  getData,
+}: ShoppingSearchProps) {
   const onClick = async () => {
     try {
       const response = await axios.get(
         `http://localhost:8084/api/recomend/shopping/search?query=` + value
       );
-
-      setData(response.data);
+      getData(response.data);
     } catch (e) {
       console.log(e);
     }
@@ -33,13 +35,13 @@ const ShoppingMainComponent: FC<IShoppingMainComponent> = ({ setData }) => {
           placeholder="검색"
           value={value}
           onChange={(e) => {
-            setValue(e.target.value);
-            // dispatch(actionSearch(e.target.value));
+            onChange(e.target.value);
           }}
         />
         <button onClick={onClick}>검색</button>
       </div>
     </div>
   );
-};
+}
+
 export default ShoppingMainComponent;

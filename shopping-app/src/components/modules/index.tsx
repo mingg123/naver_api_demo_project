@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
-import items from "./items";
+import shoppingsearch from "./shoppingsearch";
+
 const rootReducer = combineReducers({
-  items,
+  shoppingsearch,
 });
 
 export default rootReducer;
+export type RootState = ReturnType<typeof rootReducer>;

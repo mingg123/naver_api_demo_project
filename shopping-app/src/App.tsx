@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import AxiosExample from "./components/AxiosExample";
+import ShoppingSearchContainer from "./components/containers/ShoppingSearchContainer";
 
 const App = () => {
-  return <AxiosExample />;
+  return <ShoppingSearchContainer />;
 };
 
 export default App;
